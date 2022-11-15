@@ -33,3 +33,6 @@ Note that this is only necessary for when you add or remove a story file.
 ```
 yarn storybook
 ```
+
+
+Snippets : https://github.com/ults-io/vscode-react-javascript-snippets/blob/master/docs/Snippets.md
