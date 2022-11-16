@@ -6,9 +6,15 @@ import UpNextButton from './UpNextButton'
 const UpNextButtonMeta: ComponentMeta<typeof UpNextButton> = {
     title: "Up Next Button project Music",
     component: UpNextButton,
+    argTypes:{
+       type:{
+        options: ['link', 'button'],
+        control: { type: 'radio' },
+       }
+    },
     args: {
         backgroundColor: 'red',
-        textColor: '#FFFFFF',
+        textColor: '#FFFF00',
         borderRadius: '10',
         text: 'Hello',
         type: 'button'
@@ -24,5 +30,6 @@ export const ButtonWithBackground : UpNextButtonStory = (args) => <UpNextButton 
 export const ButtonLink : UpNextButtonStory = (args) => <UpNextButton {...args} />
 ButtonLink.args = {
     ...ButtonWithBackground.args,
-    type:'link'
+    type:'link',
+    textColor : '#562c2c'
 }
