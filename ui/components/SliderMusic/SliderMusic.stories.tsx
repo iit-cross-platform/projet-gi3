@@ -9,7 +9,7 @@ const SliderMusicMeta: ComponentMeta<typeof SliderMusic> = {
 
     },
     args: {
-
+        duration : 1
     }
 }
 export default SliderMusicMeta;
