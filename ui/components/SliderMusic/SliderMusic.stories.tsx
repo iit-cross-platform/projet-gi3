@@ -9,7 +9,9 @@ const SliderMusicMeta: ComponentMeta<typeof SliderMusic> = {
 
     },
     args: {
-        duration : 1
+        duration : 1,
+        durationMax : 33,
+        setDuration : (duration) => console.log("slider musique stories", duration)
     }
 }
 export default SliderMusicMeta;

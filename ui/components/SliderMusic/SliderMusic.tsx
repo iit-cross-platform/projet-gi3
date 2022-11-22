@@ -6,10 +6,11 @@ import { useEffect } from 'react'
 
 type SlideMusicProps = {
     duration : number
+    setDuration : (duration : number) => void
     durationMax : number
 }
 const SliderMusic : React.FC<SlideMusicProps> = (props) => {
-  const { duration , durationMax} = props;
+  const { duration , durationMax , setDuration} = props;
   const [ currentDuration , setCurrentDuration ] = useState(0)
 
   const onPressButton = () => {
@@ -24,11 +25,21 @@ const SliderMusic : React.FC<SlideMusicProps> = (props) => {
 
   useEffect(() => {
     console.log(" useEffect currentDuration", currentDuration)
+    setDuration(currentDuration)
+
     if (currentDuration === 10){
         console.log("end stream currentDuration")
     }
   },[currentDuration])
 
+  useEffect(() => {
+    console.log("on mounted component")
+  },[])
+
+  useEffect(() => {
+    console.log("on mounted component var undefined")
+    //setCurrentDuration(oldValue => oldValue + 1)
+  })
 
   const onEndStream = () => {
 
