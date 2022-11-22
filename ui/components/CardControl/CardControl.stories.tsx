@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 
 import CardControl  from './CardControl'
+import SliderMusic from '../SliderMusic/SliderMusic';
 const CardControlMeta: ComponentMeta<typeof CardControl> = {
     title: 'CardControl Component',
     component: CardControl,
@@ -10,7 +11,8 @@ const CardControlMeta: ComponentMeta<typeof CardControl> = {
     },
     args: {
 
-        durationMusic : 1
+        durationMusic : 1,
+        slider : <SliderMusic duration={1}/>
 
     }
 }
