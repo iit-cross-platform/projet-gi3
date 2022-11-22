@@ -12,7 +12,7 @@ const CardControlMeta: ComponentMeta<typeof CardControl> = {
     args: {
 
         durationMusic : 1,
-        slider : <SliderMusic duration={77} durationMax={100} setDuration={(duration) => console.log("slider musique stories", duration)}/>
+        slider : <SliderMusic duration={77} durationMax={100} setDuration={(duration) => console.log("## parrent ##  slider musique stories", duration)}/>
 
     }
 }
