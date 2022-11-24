@@ -12,7 +12,8 @@ const RoundButtonMusicMeta: ComponentMeta<typeof RoundButtonMusic> = {
     args: {
 
         backgroundColor : "blue",
-        icon :  <AntDesign name="play" size={24} color="black" />
+        icon :  <AntDesign name="play" size={24} color="red" />,
+        onClickButton : ()=> {console.log("Onclick")}
         
 
     }
@@ -25,7 +26,7 @@ export const BasicPause : RoundButtonMusicStory = (args) => <RoundButtonMusic {.
 BasicPause.args = {
     ...BasicPlay.args,
     
-        icon : <AntDesign name="pause" size={24} color="black" />
+        icon : <AntDesign name="pause" size={24} color="white" />
     
 }
 
