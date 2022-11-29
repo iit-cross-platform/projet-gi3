@@ -1,0 +1,15 @@
+vscode:
+  extensions:
+    - dsznajder.es7-react-js-snippets
+
+
+tasks:
+  - init: yarn --check-files
+  - command: yarn run storybook
+
+
+ports:
+  - port: 6006
+    visibility: public 
+
+

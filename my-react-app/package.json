@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "expo start --tunnel",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "start-app": "yarn workspace mobile start",
+    "watch-packages": "yarn workspace @my-workspace/my-ui  run build:watch",
+    "build-packages": "yarn workspace @my-workspace/my-ui build",
+    "start-storybook": "yarn workspace @my-workspace/my-ui run storybook"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "name": "my-react-app"
+}
