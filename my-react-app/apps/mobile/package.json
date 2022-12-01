@@ -1,0 +1,39 @@
+{
+  "name": "mobile",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "start": "expo start",
+    "start:tunnel": "expo start --tunnel",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "eject": "expo eject",
+    "build": "echo 'Nothing to build'",
+    "watch-need-help": "echo 256 | sudo tee -a /proc/sys/fs/inotify/max_user_instances && echo 32768 | sudo tee -a /proc/sys/fs/inotify/max_queued_events && echo 65536 | sudo tee -a /proc/sys/fs/inotify/max_user_watches && watchman shutdown-server"
+  },
+  "dependencies": {
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/native-stack": "^6.7.0",
+    "@my-workspace/my-ui": "*",
+    "expo": "~46.0.16",
+    "expo-status-bar": "~1.4.0",
+    "install": "^0.13.0",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-native": "0.69.6",
+    "react-native-drag-sort": "^2.4.4",
+    "react-native-safe-area-context": "4.4.1",
+    "react-native-screens": "~3.18.0",
+    "react-native-web": "~0.18.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@expo/ngrok": "^4.1.0",
+    "@types/react": "~17.0.21",
+    "@types/react-native": "~0.67.6",
+    "expo-yarn-workspaces": "^2.0.4",
+    "typescript": "~4.3.5"
+  },
+  "private": true
+}

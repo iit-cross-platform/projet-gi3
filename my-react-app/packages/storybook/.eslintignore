@@ -1,0 +1,15 @@
+.expo
+/assets
+*.d.ts
+/dist
+/build
+.gitlab-ci.yml
+.gitpod.yml
+.prettierrc.js
+.storybook/webpack.config.js
+app.json
+README.md
+rollup.config.js
+package.json
+metro.config.js
+yarn.lock

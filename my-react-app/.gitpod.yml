@@ -1,0 +1,35 @@
+vscode:
+  extensions:
+    - dsznajder.es7-react-js-snippets
+
+
+tasks:
+  - name: install dependencies
+    init: >
+      yarn install --check-files &&
+      gp sync-done installation 
+    command: echo 'installation done'
+    
+  - name: build-watch-packages
+    init: gp sync-await installation # wait for the above 'install dependencies' to finish
+    command: |
+          yarn run build-packages
+          gp sync-done build-packages 
+          yarn run watch-packages
+
+  - name: mobile-ts-app
+    init: gp sync-await installation # wait for the above 'install dependencies' to finish
+    command: |
+          gp sync-await build-packages
+          npm i -g expo-cli
+          cd apps/mobile && expo start --tunnel
+
+  - name: run storybook
+    init: gp sync-await installation # wait for the above 'install dependencies' to finish
+    command: yarn run start-storybook
+
+
+ports:
+  - port: 6006
+    visibility: public 
+
