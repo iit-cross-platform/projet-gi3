@@ -6,3 +6,6 @@ lien snippet story book: https://gist.github.com/amina21/f570e023157ca3cca0a6e31
 lien snippet react native: https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
 
 lien lottie : https://assets8.lottiefiles.com/packages/lf20_h9kqflkd.json
+
+
+components expo :  lottie https://docs.expo.dev/versions/latest/sdk/lottie/
