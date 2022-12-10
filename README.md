@@ -9,3 +9,6 @@ lien lottie : https://assets8.lottiefiles.com/packages/lf20_h9kqflkd.json
 
 
 components expo :  lottie https://docs.expo.dev/versions/latest/sdk/lottie/
+
+
+template yarn workspace : https://github.com/iit-cross-platform/template-yarn-workspace-expo/blob/main/README.md
