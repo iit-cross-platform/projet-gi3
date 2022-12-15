@@ -25,3 +25,15 @@ https://storybook.js.org/showcase/projects
 
 - ruels eslint: https://eslint.org/docs/latest/rules/
 
+
+## navigation 
+
+stack navigation : https://snack.expo.dev/@amina-tekab/stack-navigation
+
+tabs navigation : https://snack.expo.dev/@amina-tekab/tab-navigation-%7C-react-navigation
+
+drawer navigation : https://snack.expo.dev/@amina-tekab/react-navigation---drawer-navigation-example
+
+
+
+
