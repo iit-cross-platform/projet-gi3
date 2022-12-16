@@ -37,7 +37,7 @@ drawer navigation : https://snack.expo.dev/@amina-tekab/react-navigation---drawe
 
 ### Installation : https://reactnavigation.org/docs/getting-started/
 
-npm install @react-navigation/native
+expo install @react-navigation/native
 
 expo install react-native-screens react-native-safe-area-context
 
