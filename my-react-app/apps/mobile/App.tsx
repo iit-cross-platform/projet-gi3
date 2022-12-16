@@ -4,10 +4,12 @@ import { MyButton , UpNextButton } from "@my-workspace/my-ui";
 
 import { ApplicationProvider, Text } from "@ui-kitten/components";
 import * as eva from "@eva-design/eva";
+import WelcomeComponent from "./screen/WelcomeComponent";
 
 const App = () => {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
+      <WelcomeComponent></WelcomeComponent>
       <MyButton
         bgColor="black"
         isDisabled
