@@ -18,6 +18,30 @@ const WelcomeComponent = ({navigation}) => {
               navigation.navigate("Home")
             }}
           />
+          <Button
+            title="NEXT Travel"
+            onPress={() => {
+              navigation.navigate("HomeTravel")
+            }}
+          />
+          <Button
+            title="NEXT Music"
+            onPress={() => {
+              navigation.navigate("Home Music")
+            }}
+          />
+          <Button
+            title="NEXT Food"
+            onPress={() => {
+              navigation.navigate("HomeFood")
+            }}
+          />
+          <Button
+            title="NEXT SHOPING"
+            onPress={() => {
+              navigation.navigate("HomeShoping")
+            }}
+          />
         </View>
       </View>
     );
