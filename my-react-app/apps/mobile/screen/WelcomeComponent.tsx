@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { Button, StyleSheet, View ,Text  } from 'react-native';
 
-const WelcomeComponent = () => {
+const WelcomeComponent = ({navigation}) => {
     const animation = useRef(null);
     useEffect(() => {
       // You can control the ref programmatically, rather than using autoPlay
@@ -13,10 +13,9 @@ const WelcomeComponent = () => {
        <Text>web</Text>
         <View style={styles.buttonContainer}>
           <Button
-            title="Restart Animation"
+            title="NEXT"
             onPress={() => {
-              animation.current?.reset();
-              animation.current?.play();
+              navigation.navigate("Home")
             }}
           />
         </View>

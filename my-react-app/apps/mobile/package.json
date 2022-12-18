@@ -16,6 +16,7 @@
     "@my-workspace/my-ui": "*",
     "@react-navigation/native": "^6.1.1",
     "@react-navigation/native-stack": "^6.7.0",
+    "@react-navigation/stack": "^6.3.10",
     "expo": "~46.0.16",
     "expo-status-bar": "~1.4.0",
     "install": "^0.13.0",
