@@ -2,9 +2,12 @@ import { StyleSheet, Text, View , Button } from 'react-native'
 import React from 'react'
 import { MyButton , UpNextButton , CardFood } from "@my-workspace/my-ui";
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   return (
     <View>
+         <Button title="GO BACK" onPress={() => {
+                navigation.goBack()
+            }} />
       <Text>HomeScreen</Text>
       <CardFood
   description={<Text style={{color: 'black'}}>test</Text>}

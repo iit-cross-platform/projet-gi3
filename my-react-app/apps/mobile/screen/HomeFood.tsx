@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View , Button} from 'react-native'
 import React, { useState } from 'react'
 import { CardFood } from "@my-workspace/my-ui";
 
-const HomeFood = () => {
+const HomeFood = ({navigation}) => {
 
     const [listFood] = useState([{
         source: "https://reactnative.dev/img/tiny_logo.png",
@@ -27,6 +27,9 @@ const HomeFood = () => {
     }])
     return (
         <View>
+             <Button title="GO BACK" onPress={() => {
+                navigation.goBack()
+            }} />
             <Text>HomeFood</Text>
             {
 
