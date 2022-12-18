@@ -8,6 +8,7 @@ const CardFoodMeta: ComponentMeta<typeof CardFood> = {
   component: CardFood,
   argTypes: {},
   args: {
+    source: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?cs=srgb&dl=pexels-ella-olsson-1640777.jpg&fm=jpg',
     title: <Text style={{ color: 'red' }}> test </Text>,
     price: <Text style={{ color: 'gray' }}> test </Text>,
   },
