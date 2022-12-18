@@ -27,7 +27,7 @@ const WelcomeComponent = ({navigation}) => {
           <Button
             title="NEXT Music"
             onPress={() => {
-              navigation.navigate("Home Music")
+              navigation.navigate("HomeMusic")
             }}
           />
           <Button
