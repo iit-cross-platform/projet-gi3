@@ -13,7 +13,7 @@ const RoundButtonMusic: React.FC<RoundButtonMusicProps> = (props) => {
     const { backgroundColor, icon , onClickButton} = props
 
 
-    const OnPressButton = () => {
+    const onPressButton = () => {
         onClickButton()
     }
     return (
@@ -21,7 +21,7 @@ const RoundButtonMusic: React.FC<RoundButtonMusicProps> = (props) => {
             <TouchableOpacity style={[styles.roundButton,{
                  backgroundColor 
             }]}
-            onPress = {OnPressButton}
+            onPress = {onPressButton}
             >
                 {icon}
             </TouchableOpacity>
