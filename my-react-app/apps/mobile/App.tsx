@@ -13,6 +13,7 @@ import { AntDesign, Ionicons, Entypo } from '@expo/vector-icons';
 
 
 const App = () => {
+  const Stack = createStackNavigator();
 
 
 
