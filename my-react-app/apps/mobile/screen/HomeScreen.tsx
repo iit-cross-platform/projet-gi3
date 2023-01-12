@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { UpNextButton, RoundButtonMusic } from '@my-workspace/my-ui'
-import { AntDesign,Feather } from '@expo/vector-icons';
+import { AntDesign, Feather } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { FontAwesome } from '@expo/vector-icons';
 
@@ -9,7 +9,21 @@ const HomeScreen = ({ navigation }) => {
     const [currentDuration, setCurrentDuration] = useState(0)
     const [maxDuration, setMaxDuration] = useState(77)
     const [isPlaying, setIsPlaying] = useState(false)
+    let interval;
 
+
+    useEffect(() => {
+
+        if (isPlaying) {
+            interval = setInterval(() => {
+                setCurrentDuration(oldValue => oldValue + 1)
+
+            }, 1000)
+        }
+
+        return ()=> clearInterval(interval)
+
+    }, [isPlaying])
 
     return (
         <View style={{ flex: 1 }}>
@@ -57,7 +71,7 @@ const HomeScreen = ({ navigation }) => {
                 /> <RoundButtonMusic
                     backgroundColor="blue"
                     icon={isPlaying ? <FontAwesome name="pause" size={24} color="white" /> : <FontAwesome name="play" size={24} color="white" />}
-                    onClickButton={() => {setIsPlaying(!isPlaying) }}
+                    onClickButton={() => { setIsPlaying(!isPlaying) }}
                     size={50}
                 /> <RoundButtonMusic
                     backgroundColor="blue"
