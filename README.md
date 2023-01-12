@@ -49,3 +49,4 @@ expo install react-native-screens react-native-safe-area-context
 ## vector expo : https://icons.expo.fyi/ 
 
 
+## slider doc : https://github.com/callstack/react-native-slider
