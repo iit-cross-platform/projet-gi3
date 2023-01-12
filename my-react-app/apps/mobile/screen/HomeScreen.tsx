@@ -1,12 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import { UpNextButton, RoundButtonMusic } from '@my-workspace/my-ui'
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign,Feather } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
+import { FontAwesome } from '@expo/vector-icons';
 
 const HomeScreen = ({ navigation }) => {
-    const [currentDuration , setCurrentDuration ] = useState(0)
-    const [maxDuration , setMaxDuration ] = useState(77)
+    const [currentDuration, setCurrentDuration] = useState(0)
+    const [maxDuration, setMaxDuration] = useState(77)
 
 
     return (
@@ -26,10 +27,10 @@ const HomeScreen = ({ navigation }) => {
                 <Text> add comp cover</Text>
 
             </View>
-            <View style={{ flex: 1, alignItems: 'center',  justifyContent: 'center',  backgroundColor: 'blue' }}>
-<Text style={{color : 'white'}}>{currentDuration}</Text>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+                <Text style={{ color: 'white' }}>{currentDuration}</Text>
                 <Slider
-                    onValueChange={(value)=> {setCurrentDuration(value)}}
+                    onValueChange={(value) => { setCurrentDuration(value) }}
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
                     step={1}
@@ -39,7 +40,37 @@ const HomeScreen = ({ navigation }) => {
                     thumbTintColor="#F00DFD"
                 />
             </View>
-            <View style={{ flex: 1, backgroundColor: '#fdfdfd' }}></View>
+            <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center', backgroundColor: '#fdfdfd' }}>
+                <RoundButtonMusic
+                    backgroundColor="blue"
+                    icon={<Feather name="chevrons-left" size={24} color="white" />}
+                    onClickButton={() => { }}
+                    size={50}
+                />
+
+                <RoundButtonMusic
+                    backgroundColor="blue"
+                    icon={<Feather name="chevron-left" size={24} color="white" />}
+                    onClickButton={() => { }}
+                    size={50}
+                /> <RoundButtonMusic
+                    backgroundColor="blue"
+                    icon={<FontAwesome name="play" size={24} color="white" />}
+                    onClickButton={() => { }}
+                    size={50}
+                /> <RoundButtonMusic
+                    backgroundColor="blue"
+                    icon={<Feather name="chevron-right" size={24} color="white" />}
+                    onClickButton={() => { }}
+                    size={50}
+                /> <RoundButtonMusic
+                    backgroundColor="blue"
+                    icon={<Feather name="chevrons-right" size={24} color="white" />}
+                    onClickButton={() => { }}
+                    size={50}
+                />
+
+            </View>
             <View style={{ flex: 2, backgroundColor: '#616161' }}></View>
             <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
 
