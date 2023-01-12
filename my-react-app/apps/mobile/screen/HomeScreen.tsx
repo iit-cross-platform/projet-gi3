@@ -45,6 +45,7 @@ const HomeScreen = ({ navigation }) => {
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
                 <Text style={{ color: 'white' }}>{currentDuration}</Text>
                 <Slider
+                    value = {currentDuration}
                     onValueChange={(value) => { setCurrentDuration(value) }}
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
