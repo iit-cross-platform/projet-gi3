@@ -1,10 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { UpNextButton, RoundButtonMusic } from '@my-workspace/my-ui'
 import { AntDesign } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 
 const HomeScreen = ({ navigation }) => {
+    const [currentDuration , setCurrentDuration ] = useState(0)
+    const [maxDuration , setMaxDuration ] = useState(77)
+
+
     return (
         <View style={{ flex: 1 }}>
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'red', flexDirection: 'row', justifyContent: 'center' }}>
@@ -23,13 +27,16 @@ const HomeScreen = ({ navigation }) => {
 
             </View>
             <View style={{ flex: 1, alignItems: 'center',  justifyContent: 'center',  backgroundColor: 'blue' }}>
-
+<Text style={{color : 'white'}}>{currentDuration}</Text>
                 <Slider
+                    onValueChange={(value)=> {setCurrentDuration(value)}}
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
-                    maximumValue={1}
+                    step={1}
+                    maximumValue={maxDuration}
                     minimumTrackTintColor="#FFFFFF"
-                    maximumTrackTintColor="#000000"
+                    maximumTrackTintColor="#FDFDFD"
+                    thumbTintColor="#F00DFD"
                 />
             </View>
             <View style={{ flex: 1, backgroundColor: '#fdfdfd' }}></View>
