@@ -12,18 +12,26 @@ const HomeScreen = ({ navigation }) => {
     let interval;
 
 
+    const convertSecondToHHMMSS = (seconds) => {
+        let hours = Math.floor(seconds / 3600);
+        let minutes = Math.floor((seconds % 3600) / 60);
+        let secs = seconds % 60;
+        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
 
-    useEffect(()=>{
 
-        if(currentDuration >= maxDuration){
+
+    useEffect(() => {
+
+        if (currentDuration >= maxDuration) {
             setIsPlaying(false)
             setCurrentDuration(maxDuration)
         }
-        if(currentDuration <0 ){
+        if (currentDuration < 0) {
             setCurrentDuration(0)
         }
 
-    },[currentDuration])
+    }, [currentDuration])
     useEffect(() => {
 
         if (isPlaying) {
@@ -33,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
             }, 1000)
         }
 
-        return ()=> clearInterval(interval)
+        return () => clearInterval(interval)
 
     }, [isPlaying])
 
@@ -55,9 +63,9 @@ const HomeScreen = ({ navigation }) => {
 
             </View>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
-                <Text style={{ color: 'white' }}>{currentDuration}</Text>
+                <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(currentDuration)}</Text>
                 <Slider
-                    value = {currentDuration}
+                    value={currentDuration}
                     onValueChange={(value) => { setCurrentDuration(value) }}
                     style={{ width: 200, height: 40 }}
                     minimumValue={0}
@@ -72,14 +80,14 @@ const HomeScreen = ({ navigation }) => {
                 <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevrons-left" size={24} color="white" />}
-                    onClickButton={() => { setCurrentDuration(oldValue => oldValue -10)}}
+                    onClickButton={() => { setCurrentDuration(oldValue => oldValue - 10) }}
                     size={50}
                 />
 
                 <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevron-left" size={24} color="white" />}
-                    onClickButton={() => { setCurrentDuration(oldValue => oldValue -2)}}
+                    onClickButton={() => { setCurrentDuration(oldValue => oldValue - 2) }}
                     size={50}
                 /> <RoundButtonMusic
                     backgroundColor="blue"
@@ -89,13 +97,13 @@ const HomeScreen = ({ navigation }) => {
                 /> <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevron-right" size={24} color="white" />}
-                    onClickButton={() => { setCurrentDuration(oldValue => oldValue + 2)}}
+                    onClickButton={() => { setCurrentDuration(oldValue => oldValue + 2) }}
 
                     size={50}
                 /> <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevrons-right" size={24} color="white" />}
-                    onClickButton={() => { setCurrentDuration(oldValue => oldValue + 10)}}
+                    onClickButton={() => { setCurrentDuration(oldValue => oldValue + 10) }}
 
                     size={50}
                 />
