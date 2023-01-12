@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { UpNextButton, RoundButtonMusic } from '@my-workspace/my-ui'
+import { UpNextButton, RoundButtonMusic , Cover} from '@my-workspace/my-ui'
 import { AntDesign, Feather } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { FontAwesome } from '@expo/vector-icons';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation , name }) => {
     const [currentDuration, setCurrentDuration] = useState(0)
     const [maxDuration, setMaxDuration] = useState(7700)
     const [isPlaying, setIsPlaying] = useState(false)
@@ -16,14 +16,14 @@ const HomeScreen = ({ navigation }) => {
         let hours = Math.floor(seconds / 3600);
         let minutes = Math.floor((seconds % 3600) / 60);
         let secs = seconds % 60;
-        
+
         let timeString = '';
         if (hours !== 0) {
-          timeString += `${hours.toString().padStart(2, '0')}:`;
+            timeString += `${hours.toString().padStart(2, '0')}:`;
         }
         timeString += `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         return timeString;
-      }
+    }
 
 
 
@@ -53,6 +53,7 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <View style={{ flex: 1 }}>
+            <Text>{name}</Text>
             <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'red', flexDirection: 'row', justifyContent: 'center' }}>
 
                 <RoundButtonMusic
@@ -65,18 +66,23 @@ const HomeScreen = ({ navigation }) => {
             </View>
             <View style={{ flex: 4, backgroundColor: 'yellow' }}>
 
-                <Text> add comp cover</Text>
 
-            </View>
-            <View style={{ flex: 1,  alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+            <Cover
+  borderRadius={10}
+  imageUrl="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2020%2F01%2Feminem-1-2000.jpg"
+/>                
 
-                <View style={{ flex: 1 ,minWidth : 300,flexDirection : 'row' ,  alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'red' }}>
-                <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(currentDuration)}</Text>
-                <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(maxDuration-currentDuration)}</Text>
                 
+            </View>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+
+                <View style={{ flex: 1, minWidth: 300, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'red' }}>
+                    <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(currentDuration)}</Text>
+                    <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(maxDuration - currentDuration)}</Text>
+
 
                 </View>
-              <Slider
+                <Slider
                     value={currentDuration}
                     onValueChange={(value) => { setCurrentDuration(value) }}
                     style={{ width: 200, height: 40 }}

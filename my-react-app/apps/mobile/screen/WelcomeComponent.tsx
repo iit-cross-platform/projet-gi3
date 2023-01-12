@@ -13,8 +13,8 @@ const WelcomeComponent = ({navigation}) => {
        <Text>web</Text>
         <View style={styles.buttonContainer}>
           <Button
-            title="Next"
-            onPress={()=> navigation.navigate("Home")}
+            title="Next Playlist"
+            onPress={()=> navigation.navigate("Playlist")}
           />
         </View>
       </View>

@@ -69,3 +69,4 @@ This example installs a monorepo with an application using a separate custom pac
 This example uses the configuration described in the [Expo Monorepos Guide](https://docs.expo.dev/guides/monorepos/)
 
 
+import Video from 'react-native-video';

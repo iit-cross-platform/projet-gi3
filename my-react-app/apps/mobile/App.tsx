@@ -10,6 +10,7 @@ import HomeScreen from "./screen/HomeScreen";
 
 import { RoundButtonMusic } from "@my-workspace/my-ui";
 import { AntDesign, Ionicons, Entypo } from '@expo/vector-icons';
+import PlaylistScreen from "./screen/PlaylistScreen";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Welcome" component={WelcomeComponent}></Stack.Screen>
           <Stack.Screen name="Home" component={HomeScreen}></Stack.Screen>
+          <Stack.Screen name="Playlist" component={PlaylistScreen}></Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
     </ApplicationProvider>
