@@ -8,6 +8,7 @@ import { FontAwesome } from '@expo/vector-icons';
 const HomeScreen = ({ navigation }) => {
     const [currentDuration, setCurrentDuration] = useState(0)
     const [maxDuration, setMaxDuration] = useState(77)
+    const [isPlaying, setIsPlaying] = useState(false)
 
 
     return (
@@ -55,8 +56,8 @@ const HomeScreen = ({ navigation }) => {
                     size={50}
                 /> <RoundButtonMusic
                     backgroundColor="blue"
-                    icon={<FontAwesome name="play" size={24} color="white" />}
-                    onClickButton={() => { }}
+                    icon={isPlaying ? <FontAwesome name="pause" size={24} color="white" /> : <FontAwesome name="play" size={24} color="white" />}
+                    onClickButton={() => {setIsPlaying(!isPlaying) }}
                     size={50}
                 /> <RoundButtonMusic
                     backgroundColor="blue"
