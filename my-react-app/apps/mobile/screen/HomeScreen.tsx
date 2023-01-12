@@ -7,7 +7,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 const HomeScreen = ({ navigation }) => {
     const [currentDuration, setCurrentDuration] = useState(0)
-    const [maxDuration, setMaxDuration] = useState(77)
+    const [maxDuration, setMaxDuration] = useState(7700)
     const [isPlaying, setIsPlaying] = useState(false)
     let interval;
 
@@ -16,8 +16,14 @@ const HomeScreen = ({ navigation }) => {
         let hours = Math.floor(seconds / 3600);
         let minutes = Math.floor((seconds % 3600) / 60);
         let secs = seconds % 60;
-        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-    }
+        
+        let timeString = '';
+        if (hours !== 0) {
+          timeString += `${hours.toString().padStart(2, '0')}:`;
+        }
+        timeString += `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        return timeString;
+      }
 
 
 
@@ -62,9 +68,15 @@ const HomeScreen = ({ navigation }) => {
                 <Text> add comp cover</Text>
 
             </View>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+            <View style={{ flex: 1,  alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+
+                <View style={{ flex: 1 ,minWidth : 300,flexDirection : 'row' ,  alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'red' }}>
                 <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(currentDuration)}</Text>
-                <Slider
+                <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(maxDuration-currentDuration)}</Text>
+                
+
+                </View>
+              <Slider
                     value={currentDuration}
                     onValueChange={(value) => { setCurrentDuration(value) }}
                     style={{ width: 200, height: 40 }}
