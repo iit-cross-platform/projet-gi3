@@ -19,7 +19,7 @@ const HomeScreen = ({ navigation }) => {
             setIsPlaying(false)
             setCurrentDuration(maxDuration)
         }
-        if(currentDuration <=0 ){
+        if(currentDuration <0 ){
             setCurrentDuration(0)
         }
 
