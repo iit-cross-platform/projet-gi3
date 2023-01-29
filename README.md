@@ -56,3 +56,7 @@ expo install react-native-screens react-native-safe-area-context
 expo av 
 
 https://docs.expo.dev/versions/latest/sdk/av/
+
+
+
+lien figma : https://www.figma.com/file/yeok5btXQmVKR2LUtpIygX/Cours?node-id=0%3A1&t=uNztyamiSK3bMrHF-0
