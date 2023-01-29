@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 
 const PlaylistScreen = ({ navigation }) => {
@@ -26,7 +26,11 @@ const PlaylistScreen = ({ navigation }) => {
                     <Text> {p.name} </Text>
                 </TouchableOpacity>
             )})}
-            <Text>PlaylistScreen</Text>
+
+            <Button title='Artiste' onPress={()=> {navigation.navigate('Artiste')}}>
+
+            </Button>
+
         </View>
     )
 }
