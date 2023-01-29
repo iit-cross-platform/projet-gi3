@@ -21,7 +21,7 @@ tasks:
     init: gp sync-await installation # wait for the above 'install dependencies' to finish
     command: |
           gp sync-await build-packages
-          npm i -g expo-cli
+          npm i -g expo-cli@6.1.0
           cd apps/mobile && expo start --tunnel
 
   - name: run storybook

@@ -5,12 +5,14 @@ import { AntDesign, Feather } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 import { FontAwesome } from '@expo/vector-icons';
 
-const HomeScreen = ({ navigation , name }) => {
+const HomeScreen = ({ navigation , route }) => {
+    console.log(route)
+    const [dataPlayer, setDataPlayer] = useState(route.params)
     const [currentDuration, setCurrentDuration] = useState(0)
-    const [maxDuration, setMaxDuration] = useState(7700)
+    const [maxDuration, setMaxDuration] = useState(dataPlayer.duration)
     const [isPlaying, setIsPlaying] = useState(false)
     let interval;
-
+    console.log(dataPlayer)
 
     const convertSecondToHHMMSS = (seconds) => {
         let hours = Math.floor(seconds / 3600);
@@ -52,9 +54,9 @@ const HomeScreen = ({ navigation , name }) => {
     }, [isPlaying])
 
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1 , width : 350 , backgroundColor : "#1F1D2B" , justifyContent : 'center' , alignItems : 'center'}}>
             <Text>{name}</Text>
-            <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'red', flexDirection: 'row', justifyContent: 'center' }}>
+            <View style={{ flex: 1, alignItems: 'center', flexDirection: 'row', justifyContent: 'center' }}>
 
                 <RoundButtonMusic
                     backgroundColor="transparent"
@@ -64,19 +66,19 @@ const HomeScreen = ({ navigation , name }) => {
                 />
                 <Text style={{ color: 'white', fontSize: 16, fontWeight: 'bold', paddingLeft: 10 }}>Now Playing</Text>
             </View>
-            <View style={{ flex: 4, backgroundColor: 'yellow' }}>
+            <View style={{ flex: 4 }}>
 
 
             <Cover
   borderRadius={10}
-  imageUrl="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2020%2F01%2Feminem-1-2000.jpg"
+  imageUrl={dataPlayer.poster}
 />                
 
                 
             </View>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue' }}>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
 
-                <View style={{ flex: 1, minWidth: 300, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'red' }}>
+                <View style={{ flex: 1, minWidth: 300, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'}}>
                     <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(currentDuration)}</Text>
                     <Text style={{ color: 'white' }}>{convertSecondToHHMMSS(maxDuration - currentDuration)}</Text>
 
@@ -94,7 +96,7 @@ const HomeScreen = ({ navigation , name }) => {
                     thumbTintColor="#F00DFD"
                 />
             </View>
-            <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center', backgroundColor: '#fdfdfd' }}>
+            <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'center'}}>
                 <RoundButtonMusic
                     backgroundColor="blue"
                     icon={<Feather name="chevrons-left" size={24} color="white" />}
@@ -127,8 +129,8 @@ const HomeScreen = ({ navigation , name }) => {
                 />
 
             </View>
-            <View style={{ flex: 2, backgroundColor: '#616161' }}></View>
-            <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+            <View style={{ flex: 2 }}></View>
+            <View style={{ flex: 1 }}>
 
                 <UpNextButton
                     backgroundColor="red"
