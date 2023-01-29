@@ -50,3 +50,9 @@ expo install react-native-screens react-native-safe-area-context
 
 
 ## slider doc : https://github.com/callstack/react-native-slider
+
+
+
+expo av 
+
+https://docs.expo.dev/versions/latest/sdk/av/
